@@ -22,10 +22,10 @@ public class PlayerOP : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Gold"))
+        if (other.CompareTag("Gold")) //Altına dokundu mu? 
         {
-            _gold++;
-            OnGoldCollected?.Invoke(_gold);
+            _gold++; //Altını arttır
+            OnGoldCollected?.Invoke(_gold); //Event'i çağır
             other.transform.position = new Vector3(Random.Range(-5f,5f), 0, Random.Range(-5f,5f));
         }
     }
